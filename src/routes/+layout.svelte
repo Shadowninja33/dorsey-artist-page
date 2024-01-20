@@ -16,12 +16,16 @@
 	const drawerStore = getDrawerStore();
 
 	function drawerOpen(): void {
-		drawerStore.open({});
+		drawerStore.open();
 	}
 </script>
 
 <Drawer>
-	<img class="p-4" alt="Headshot for artist, painter, and sculpter Jacqui Dorsey" src={headshot} />
+	<img
+		class="p-4 max-w-72"
+		alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
+		src={headshot}
+	/>
 	<Navigation />
 </Drawer>
 <AppShell slotSidebarLeft="bg-surface-500/5 w-0 lg:w-64">
@@ -54,4 +58,5 @@
 		/>
 		<Navigation />
 	</svelte:fragment>
+	<slot />
 </AppShell>
