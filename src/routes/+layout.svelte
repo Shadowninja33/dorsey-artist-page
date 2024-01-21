@@ -21,12 +21,10 @@
 </script>
 
 <Drawer>
-	<img
-		class="p-4 max-w-72"
-		alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
-		src={headshot}
-	/>
-	<Navigation />
+	<div class="p-8 max-w-96">
+		<img alt="Headshot for artist, painter, and sculpter Jacqui Dorsey" src={headshot} />
+		<Navigation class="pt-8" />
+	</div>
 </Drawer>
 <AppShell slotSidebarLeft="w-0 lg:w-64" class="max-w-screen-xl bg-surface-50-900-token p-8">
 	<svelte:fragment slot="header">
@@ -43,7 +41,7 @@
 						</span>
 					</button>
 				</div>
-				<h1 class="uppercase h2">Jacqui Dorsey</h1>
+				<a href="/"><h1 class="uppercase h2">Jacqui Dorsey</h1></a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<LightSwitch />
