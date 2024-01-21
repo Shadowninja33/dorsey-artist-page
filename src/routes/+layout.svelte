@@ -28,7 +28,7 @@
 	/>
 	<Navigation />
 </Drawer>
-<AppShell slotSidebarLeft="bg-surface-500/5 w-0 lg:w-64">
+<AppShell slotSidebarLeft="bg-surface-500/5 w-0 lg:w-64" class="max-w-screen-xl">
 	<svelte:fragment slot="header">
 		<AppBar>
 			<svelte:fragment slot="lead">
