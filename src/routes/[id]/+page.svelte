@@ -11,7 +11,6 @@
 	<div class="flex items-center">
 		<a class="underline" href={previousArtPiece?.id || noop}>Previous</a><span class="mx-1">/</span
 		><a class="underline" href={nextArtPiece?.id || noop}>Next</a>
-		{data.pieceIndex}
 	</div>
 	<div>
 		<a href="/">
