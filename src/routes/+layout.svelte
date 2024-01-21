@@ -28,9 +28,9 @@
 	/>
 	<Navigation />
 </Drawer>
-<AppShell slotSidebarLeft="bg-surface-500/5 w-0 lg:w-64" class="max-w-screen-xl">
+<AppShell slotSidebarLeft="w-0 lg:w-64" class="max-w-screen-xl bg-surface-50-900-token p-8">
 	<svelte:fragment slot="header">
-		<AppBar>
+		<AppBar background="bg-surface-50-900-token">
 			<svelte:fragment slot="lead">
 				<div class="flex items-center">
 					<button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
@@ -42,8 +42,8 @@
 							</svg>
 						</span>
 					</button>
-					<strong class="text-xl uppercase">Jacqui Dorsey</strong>
 				</div>
+				<h1 class="uppercase h2">Jacqui Dorsey</h1>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<LightSwitch />
@@ -51,12 +51,10 @@
 		</AppBar>
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
-		<img
-			class="p-4"
-			alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
-			src={headshot}
-		/>
-		<Navigation />
+		<div class="px-8 pt-4">
+			<img alt="Headshot for artist, painter, and sculpter Jacqui Dorsey" src={headshot} />
+			<Navigation class="pt-8" />
+		</div>
 	</svelte:fragment>
 	<slot />
 </AppShell>

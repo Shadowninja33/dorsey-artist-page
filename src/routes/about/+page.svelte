@@ -2,7 +2,6 @@
 </script>
 
 <article class="text-token prose p-8">
-	<h1 class="text-token">About Me</h1>
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac risus a dolor lacinia cursus
 		sed gravida libero. Suspendisse molestie convallis tempor. Ut hendrerit ac ligula a viverra.

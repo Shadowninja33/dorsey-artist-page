@@ -3,7 +3,11 @@
 @tailwind utilities;
 @tailwind variants;
 
+:root [data-theme='hamlindigo'] {
+	background-image: none;
+}
+
 html,
 body {
-	@apply h-full overflow-hidden;
+	@apply h-full overflow-hidden bg-surface-50-900-token;
 }
