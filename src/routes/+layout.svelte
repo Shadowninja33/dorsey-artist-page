@@ -28,7 +28,7 @@
 </Drawer>
 <AppShell slotSidebarLeft="w-0 lg:w-64" class="max-w-screen-xl bg-surface-50-900-token p-8">
 	<svelte:fragment slot="header">
-		<AppBar background="bg-surface-50-900-token">
+		<AppBar padding="px-8 py-4" background="bg-surface-50-900-token">
 			<svelte:fragment slot="lead">
 				<div class="flex items-center">
 					<button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
