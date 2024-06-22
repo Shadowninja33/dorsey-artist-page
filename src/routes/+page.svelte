@@ -3,6 +3,6 @@
 	import ArtGallery from '$lib/components/art/art-gallery.svelte';
 </script>
 
-<div class="container mx-auto p-8 space-y-8">
+<div class="container mx-auto pt-4 px-8 space-y-8">
 	<ArtGallery pieces={artPieces} />
 </div>
