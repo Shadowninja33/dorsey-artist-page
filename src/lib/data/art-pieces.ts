@@ -1,4 +1,3 @@
-import sunset from '$lib/images/sunset.webp';
 import aDaysWork from '$lib/images/art/a-days-work.jpg';
 import dorieMillerMural from '$lib/images/art/dorie-miller-mural.jpg';
 import emilyMorgan from '$lib/images/art/emily-morgan.jpg';
@@ -10,6 +9,8 @@ import seamstress from '$lib/images/art/seamstress.jpg';
 import woman from '$lib/images/art/woman.jpg';
 import sisters from '$lib/images/art/sisters.jpg';
 import sisters2 from '$lib/images/art/sisters-2.jpg';
+import generations from '$lib/images/art/generations.jpg';
+import grandfather from '$lib/images/art/grandfather.jpg';
 
 export const artPieces = [
 	{
@@ -50,12 +51,22 @@ export const artPieces = [
 		alt: 'A sculpture of a colorfully dressed seamstress wearing a thimble and holding a piece of string'
 	},
 	{
+		id: '1de3ea49-70c4-4b6b-a0f4-af9b7bec0a78',
+		src: grandfather,
+		alt: 'A sculpture of a grandfather holding his grandchild while she sucks her thumb'
+	},
+	{
+		id: 'cfe4c743-7cbe-4baa-95b6-84372d102347',
+		src: generations,
+		alt: "A mother looks lovingly at her daughter, who rests her chin on her mother's shoulder and looks at the viewer"
+	},
+	{
 		id: '2c075af7-392b-4c6e-902b-dafa307f82d0',
 		src: sisters,
 		alt: 'A painting of two sisters wearing straw color hats. The first woman is looking over her shoulder towards the viewer, while the other faces away.'
 	},
 	{
-		id: 'c6988a2e-4a68-4c64-afb6-1151cc7a5715',
+		id: 'c518cc2c-e2b5-4d26-9e67-0578961c5c1e',
 		src: sisters2,
 		alt: 'A painting of two sisters wearing straw color hats. The second woman is looking over her shoulder towards the viewer, while the first faces away.'
 	},
