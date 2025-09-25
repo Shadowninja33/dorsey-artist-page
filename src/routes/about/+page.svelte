@@ -3,12 +3,11 @@
 
 <article class="text-token prose p-8">
 	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac risus a dolor lacinia cursus
-		sed gravida libero. Suspendisse molestie convallis tempor. Ut hendrerit ac ligula a viverra.
-		Nulla facilisi. Proin vel scelerisque est. Integer in leo enim. Maecenas non vehicula quam.
-		Etiam nec auctor leo. Suspendisse eget felis eu felis molestie rutrum ac vitae dui. Vivamus id
-		tortor vehicula, efficitur urna quis, congue ex. Ut sodales, nisi ultrices aliquet consequat,
-		velit sapien gravida sem, quis fringilla nisl sapien vel quam.
+		Jacqui Dorsey is an accomplished Sculptor, Muralist, retired nurse and painter, whose work has
+		won many awards throughout the nation. Her three-dimensional clay works are sensitive endearing
+		narratives of family, friends, and historical figures. Her clay bust, "The Way To Freedom was
+		shown at the Pittsburgh Center for the Arts. Artist Jacqui Dorsey is actively involved in the
+		community and served as a docent at McNay Museum of Arts.
 	</p>
 	<p>
 		Curabitur id ipsum et tellus condimentum vehicula ut non tellus. Pellentesque mollis massa in

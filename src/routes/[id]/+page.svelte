@@ -7,7 +7,7 @@
 	const noop: string = 'javascript:;';
 </script>
 
-<section class="flex justify-between px-8 pt-4">
+<nav class="flex justify-between px-8 pt-4">
 	<div class="flex justify-start">
 		<a class="underline" href={previousArtPiece?.id || noop}>Previous</a><span class="mx-1">/</span
 		><a class="underline" href={nextArtPiece?.id || noop}>Next</a>
@@ -28,6 +28,13 @@
 			</span>
 		</a>
 	</div>
-</section>
+</nav>
+<section>
+	<h1 class="text-center h2">{'name' in data.piece ? data.piece.name : ''}</h1>
 
-<img class="mx-auto p-8 max-h-[750px]" src={data.piece.src} alt={data.piece.alt} />
+	<img class="mx-auto p-8 max-h-[750px]" src={data.piece.src} alt={data.piece.alt} />
+
+	<div class="prose">
+		<p>{'description' in data.piece ? data.piece.description : ''}</p>
+	</div>
+</section>
