@@ -34,7 +34,11 @@
 
 	<img class="mx-auto p-8 max-h-[750px]" src={data.piece.src} alt={data.piece.alt} />
 
-	<div class="prose">
-		<p>{'description' in data.piece ? data.piece.description : ''}</p>
-	</div>
+	{#if 'description' in data.piece}
+		<div class="mx-auto prose dark:prose-invert">
+			{#each data.piece.description as line}
+				<p>{line}</p>
+			{/each}
+		</div>
+	{/if}
 </section>
