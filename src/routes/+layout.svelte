@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Navigation from '$lib/components/navigation/navigation.svelte';
-	import headshot from '$lib/images/woman.avif';
+	import headshot from '$lib/images/dorsey-head-shot.png';
 	import '../app.postcss';
 	import {
 		AppBar,
