@@ -79,7 +79,7 @@ export const artPieces: ArtPiece[] = [
 	},
 	{
 		id: '4fa0d45e-0f24-49bf-8043-2d08b8d0ec99',
-		name: '',
+		name: 'Dolled Up',
 		images: [
 			{
 				src: woman,
@@ -192,7 +192,7 @@ export const artPieces: ArtPiece[] = [
 	},
 	{
 		id: '7282c6ae-1a3b-43e5-a0ae-2b328f6d9855',
-		name: 'The Musician',
+		name: 'Musician',
 		images: [
 			{
 				src: musician,
