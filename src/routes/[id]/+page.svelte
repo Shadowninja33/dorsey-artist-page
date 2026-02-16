@@ -52,9 +52,9 @@
 	</div>
 
 	<!-- Details -->
-	<div>
+	<div class="text-center">
 		{#if data.piece.location}
-			<span class="font-bold"> Address: </span>
+			<span class="font-bold">Address: </span>
 			<a class="underline" target="_blank" href={generateGoogleMapsSearchUrl(data.piece.location)}
 				>{data.piece.location}</a
 			>
