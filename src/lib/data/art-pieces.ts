@@ -1,8 +1,13 @@
 import aDaysWork from '$lib/images/art/a-days-work.jpg';
 import dorieMillerMural from '$lib/images/art/dorie-miller-mural.jpg';
+import dorieMillerMuralLeft from '$lib/images/art/dorie-miller-mural-left.jpg';
+import dorieMillerMuralPassage from '$lib/images/art/dorie-miller-mural-passage.jpg';
+import dorieMillerMuralRight from '$lib/images/art/dorie-miller-mural-right.jpg';
+
 import emilyMorgan from '$lib/images/art/emily-morgan.jpg';
 import fatherAndChild from '$lib/images/art/father-and-child.jpg';
-import muralAndArtist from '$lib/images/art/mural-and-artist.jpg';
+import foundingMothersMuralAndArtist from '$lib/images/art/founding-mothers-mural-and-artist.jpg';
+import foundingMothersMuralPassage from '$lib/images/art/founding-mothers-mural-passage.jpg';
 import musician from '$lib/images/art/musician.jpg';
 import nursing from '$lib/images/art/nursing.jpg';
 import seamstress from '$lib/images/art/seamstress.jpg';
@@ -12,37 +17,90 @@ import sisters2 from '$lib/images/art/sisters-2.jpg';
 import generations from '$lib/images/art/generations.jpg';
 import grandfather from '$lib/images/art/grandfather.jpg';
 
-export const artPieces = [
+type Tuple<T, N extends number, A extends unknown[]> = A extends { length: N }
+	? A
+	: Tuple<T, N, [...A, T]>;
+type AtLeast<T, N extends number> = [...Tuple<T, N, []>, ...T[]];
+type AtLeastOne<T> = AtLeast<T, 1>;
+
+export interface ArtPiece {
+	id: string;
+	name: string;
+	images: AtLeastOne<Image>;
+	location?: string;
+	description?: string[];
+}
+
+export interface Image {
+	src: string;
+	alt: string;
+}
+
+export const artPieces: ArtPiece[] = [
 	{
 		id: '1af5b845-0dcc-42a8-a9bf-2de147e629a4',
-		src: aDaysWork,
-		alt: 'A Painting of a boy smiling while holding oranges, surrounded by fruit',
-		name: "A Day's Work"
+		name: "A Day's Work",
+		images: [
+			{
+				src: aDaysWork,
+				alt: 'A Painting of a boy smiling while holding oranges, surrounded by fruit'
+			}
+		]
 	},
 	{
 		id: '9f5d59a6-5240-4ada-bf41-08ebbc8d8b0f',
-		src: emilyMorgan,
-		alt: 'A Painting of Emily Morgan (a free woman of color) in a peach color dress holding a yellow rose'
+		name: 'Emily Morgan',
+		images: [
+			{
+				src: emilyMorgan,
+				alt: 'A Painting of Emily Morgan (a free woman of color) in a peach color dress holding a yellow rose'
+			}
+		]
 	},
 	{
 		id: '9b098b7b-f02c-4eeb-995d-8c3723245d47',
-		src: fatherAndChild,
-		alt: 'A profile painting of a father holding his child on his shoulders and smiling'
+		name: 'Father and Child',
+		images: [
+			{
+				src: fatherAndChild,
+				alt: 'A profile painting of a father holding his child on his shoulders and smiling'
+			}
+		]
 	},
 	{
 		id: '6f13b85b-b5e7-49a6-a3da-c35a05f28237',
-		src: nursing,
-		alt: 'A painting of a woman of color nursing her baby'
+		name: 'Nursing',
+		images: [
+			{
+				src: nursing,
+				alt: 'A painting of a woman of color nursing her baby'
+			}
+		]
 	},
 	{
 		id: '4fa0d45e-0f24-49bf-8043-2d08b8d0ec99',
-		src: woman,
-		alt: 'A sculpture of a woman of color wearing a white and red dress, blue eyeshadow, and red lipstick'
+		name: '',
+		images: [
+			{
+				src: woman,
+				alt: 'A sculpture of a woman of color wearing a white and red dress, blue eyeshadow, and red lipstick'
+			}
+		]
 	},
 	{
 		id: 'ad0c879a-399b-4358-b8f8-e21a749a6d0a',
 		name: 'The Eastside Founding Mothers',
-		src: muralAndArtist,
+		location: '210 Chestnut St, San Antonio, TX 78202',
+		images: [
+			{
+				src: foundingMothersMuralAndArtist,
+				alt: 'A picture of Jacqui Dorsey (the artist) standing next to a mural she painted featuring 3 the Eastside founding mothers: Artemisia Bowden, Mattie Briscoe, and Myra Hemmings'
+			},
+			{
+				src: foundingMothersMuralPassage,
+				alt: `A picture of the passage shown on the lower left of The Founding Mother's Mural which reads: "Jacqui Dorsey and Douglass Elementary School"`
+			}
+		],
 		description: [
 			`This is the "Founding Mothers Mural" located on the San Antonio East Side in an area known as Ellis Alley. When the civil war ended in 1865, new tax laws allowed ex-slaves to own property and pay taxes. Property was purchased in the east side area and divided among selected individuals who wanted to develop businesses in the area. When African Americans were first allowed to own property, land designated was the back streets and alleys on the eastside of San Antonio. The former slaves took these properties and developed them into a thriving self-sufficient community known as Ellis Alley. The city's "Black Eastside" emerged from the area surrounding this site, on what is now called Chestnut Street.`,
 
@@ -57,42 +115,89 @@ export const artPieces = [
 			`Artist Jacqui Dorsey created the 6-by-8-foot tile mural. Fifth graders from Douglass Elementary School helped Mrs. Dorsey with the floral embellishments on the lower portion of the mural.`,
 
 			`The Eastside Founding Mothers mural is located in the courtyard behind two restored duplexes in the Ellis Alley area located on Chestnut Street. These structures were restored by VIA Metropolitan Transit and serve as the information center for the Ellis Alley Park and Ride and are part of the only remaining original structure from this historic community.`
-		],
-		alt: 'A picture of Jacqui Dorsey (the artist) standing next to a mural she painted featuring 3 the Eastside founding mothers: Artemisia Bowden, Mattie Briscoe, and Myra Hemmings'
+		]
 	},
 	{
 		id: 'c6988a2e-4a68-4c64-afb6-1151cc7a5715',
-		src: seamstress,
-		alt: 'A sculpture of a colorfully dressed seamstress wearing a thimble and holding a piece of string'
+		name: 'Seamstress',
+		images: [
+			{
+				src: seamstress,
+				alt: 'A sculpture of a colorfully dressed seamstress wearing a thimble and holding a piece of string'
+			}
+		]
 	},
 	{
 		id: '1de3ea49-70c4-4b6b-a0f4-af9b7bec0a78',
-		src: grandfather,
-		alt: 'A sculpture of a grandfather holding his grandchild while she sucks her thumb'
+		name: 'Grandfather',
+		images: [
+			{
+				src: grandfather,
+				alt: 'A sculpture of a grandfather holding his grandchild while she sucks her thumb'
+			}
+		]
 	},
 	{
 		id: 'cfe4c743-7cbe-4baa-95b6-84372d102347',
-		src: generations,
-		alt: "A mother looks lovingly at her daughter, who rests her chin on her mother's shoulder and looks at the viewer"
+		name: 'Generations',
+		images: [
+			{
+				src: generations,
+				alt: "A mother looks lovingly at her daughter, who rests her chin on her mother's shoulder and looks at the viewer"
+			}
+		]
 	},
 	{
 		id: '2c075af7-392b-4c6e-902b-dafa307f82d0',
-		src: sisters,
-		alt: 'A painting of two sisters wearing straw color hats. The first woman is looking over her shoulder towards the viewer, while the other faces away.'
+		name: 'Sisters',
+		images: [
+			{
+				src: sisters,
+				alt: 'A painting of two sisters wearing straw color hats. The first woman is looking over her shoulder towards the viewer, while the other faces away.'
+			}
+		]
 	},
 	{
 		id: 'c518cc2c-e2b5-4d26-9e67-0578961c5c1e',
-		src: sisters2,
-		alt: 'A painting of two sisters wearing straw color hats. The second woman is looking over her shoulder towards the viewer, while the first faces away.'
+		name: 'Sisters Two',
+		images: [
+			{
+				src: sisters2,
+				alt: 'A painting of two sisters wearing straw color hats. The second woman is looking over her shoulder towards the viewer, while the first faces away.'
+			}
+		]
 	},
 	{
 		id: 'a114897f-465a-41d3-9ebf-02d3fe878d3b',
-		src: dorieMillerMural,
-		alt: 'A mural featuring Dorie Miller and other influential black figures'
+		name: 'Dorie Miller',
+		location: '2802 Martin Luther King Dr, San Antonio, TX 78220',
+		images: [
+			{
+				src: dorieMillerMural,
+				alt: 'A mural featuring Dorie Miller and other influential black figures.'
+			},
+			{
+				src: dorieMillerMuralLeft,
+				alt: 'A close up of the left side of the Dorie Miller Mural.'
+			},
+			{
+				src: dorieMillerMuralRight,
+				alt: 'A close up of the right side of the Dorie Miller Mural.'
+			},
+			{
+				src: dorieMillerMuralPassage,
+				alt: 'A close up of the passage in the upper left of the Dorie Miller Mural which reads, "The names on the wall are the children of Dorie Miller, Martin Luther King and Booker T Washington schools. Our Future Heroes. 1996"'
+			}
+		]
 	},
 	{
 		id: '7282c6ae-1a3b-43e5-a0ae-2b328f6d9855',
-		src: musician,
-		alt: 'A sculpture of a well-dressed violinist playing his instrument'
+		name: 'The Musician',
+		images: [
+			{
+				src: musician,
+				alt: 'A sculpture of a well-dressed violinist playing his instrument'
+			}
+		]
 	}
 ] as const;
