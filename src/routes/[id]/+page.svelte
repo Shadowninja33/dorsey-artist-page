@@ -24,7 +24,7 @@
 		{/if}
 	</div>
 	<div>
-		<a href="/">
+		<a href="/" aria-label="Back to Gallery">
 			<span>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

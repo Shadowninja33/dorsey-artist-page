@@ -31,7 +31,7 @@
 		<AppBar padding="px-8 py-4" background="bg-surface-50-900-token">
 			<svelte:fragment slot="lead">
 				<div class="flex items-center">
-					<button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
+					<button class="lg:hidden btn btn-sm mr-4" aria-label="Open drawer" on:click={drawerOpen}>
 						<span>
 							<svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
 								<rect width="100" height="20" />
