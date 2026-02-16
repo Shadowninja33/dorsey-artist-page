@@ -29,6 +29,6 @@
 
 <style>
 	a.is-active {
-		@apply bg-primary-500-400-token text-on-primary-token focus:text-primary-900-50-token;
+		@apply bg-primary-500-400-token text-on-primary-token;
 	}
 </style>
