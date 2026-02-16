@@ -54,5 +54,8 @@
 			<Navigation class="pt-8" />
 		</div>
 	</svelte:fragment>
+	<svelte:fragment slot="footer"
+		>Copyright © 2026 Jacqui Dorsey. All rights reserved.</svelte:fragment
+	>
 	<slot />
 </AppShell>
