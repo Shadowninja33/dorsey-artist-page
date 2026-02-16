@@ -21,7 +21,7 @@
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@tailwindcss/typography": "0.5.10",
 		"@types/eslint": "8.56.0",
-		"@types/node": "20.11.0",
+		"@types/node": "24.1.0",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.0.0",
 		"autoprefixer": "10.4.17",
@@ -41,6 +41,6 @@
 	},
 	"type": "module",
 	"volta": {
-		"node": "22.20.0"
+		"node": "24.13.1"
 	}
 }
