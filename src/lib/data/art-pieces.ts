@@ -1,21 +1,20 @@
-import aDaysWork from '$lib/images/art/a-days-work.jpg';
-import dorieMillerMural from '$lib/images/art/dorie-miller-mural.jpg';
-import dorieMillerMuralLeft from '$lib/images/art/dorie-miller-mural-left.jpg';
-import dorieMillerMuralPassage from '$lib/images/art/dorie-miller-mural-passage.jpg';
-import dorieMillerMuralRight from '$lib/images/art/dorie-miller-mural-right.jpg';
-
-import emilyMorgan from '$lib/images/art/emily-morgan.jpg';
-import fatherAndChild from '$lib/images/art/father-and-child.jpg';
-import foundingMothersMuralAndArtist from '$lib/images/art/founding-mothers-mural-and-artist.jpg';
-import foundingMothersMuralPassage from '$lib/images/art/founding-mothers-mural-passage.jpg';
-import musician from '$lib/images/art/musician.jpg';
-import nursing from '$lib/images/art/nursing.jpg';
-import seamstress from '$lib/images/art/seamstress.jpg';
-import woman from '$lib/images/art/woman.jpg';
-import sisters from '$lib/images/art/sisters.jpg';
-import sisters2 from '$lib/images/art/sisters-2.jpg';
-import generations from '$lib/images/art/generations.jpg';
-import grandfather from '$lib/images/art/grandfather.jpg';
+import aDaysWork from '$lib/images/art/a-days-work.jpg?enhanced';
+import dorieMillerMural from '$lib/images/art/dorie-miller-mural.jpg?enhanced';
+import dorieMillerMuralLeft from '$lib/images/art/dorie-miller-mural-left.jpg?enhanced';
+import dorieMillerMuralPassage from '$lib/images/art/dorie-miller-mural-passage.jpg?enhanced';
+import dorieMillerMuralRight from '$lib/images/art/dorie-miller-mural-right.jpg?enhanced';
+import emilyMorgan from '$lib/images/art/emily-morgan.jpg?enhanced';
+import fatherAndChild from '$lib/images/art/father-and-child.jpg?enhanced';
+import foundingMothersMuralAndArtist from '$lib/images/art/founding-mothers-mural-and-artist.jpg?enhanced';
+import foundingMothersMuralPassage from '$lib/images/art/founding-mothers-mural-passage.jpg?enhanced';
+import musician from '$lib/images/art/musician.jpg?enhanced';
+import nursing from '$lib/images/art/nursing.jpg?enhanced';
+import seamstress from '$lib/images/art/seamstress.jpg?enhanced';
+import woman from '$lib/images/art/woman.jpg?enhanced';
+import sisters from '$lib/images/art/sisters.jpg?enhanced';
+import sisters2 from '$lib/images/art/sisters-2.jpg?enhanced';
+import generations from '$lib/images/art/generations.jpg?enhanced';
+import grandfather from '$lib/images/art/grandfather.jpg?enhanced';
 
 type Tuple<T, N extends number, A extends unknown[]> = A extends { length: N }
 	? A
@@ -32,7 +31,7 @@ export interface ArtPiece {
 }
 
 export interface Image {
-	src: string;
+	src: typeof aDaysWork;
 	alt: string;
 }
 

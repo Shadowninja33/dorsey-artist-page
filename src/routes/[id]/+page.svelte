@@ -44,7 +44,7 @@
 	<h1 class="text-center h2">{'name' in data.piece ? data.piece.name : ''}</h1>
 
 	<div class="overflow-auto">
-		<img
+		<enhanced:img
 			class="mx-auto w-auto h-[200px] sm:h-[400px]"
 			src={selectedImage.src}
 			alt={selectedImage.alt}
@@ -69,8 +69,9 @@
 					on:click={() => (selectedImageIndex = i)}
 					aria-label="Select {image.alt}"
 				>
-					<img
+					<enhanced:img
 						class="h-48 w-auto {i === selectedImageIndex ? 'opacity-90' : 'opacity-60'}"
+						sizes="min(1280px, 100vw)"
 						src={image.src}
 						alt={image.alt}
 					/>

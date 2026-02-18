@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Navigation from '$lib/components/navigation/navigation.svelte';
-	import headshot from '$lib/images/dorsey-head-shot.png';
+	import headshot from '$lib/images/dorsey-head-shot.png?enhanced';
 	import '../app.postcss';
 	import {
 		AppBar,
@@ -22,11 +22,19 @@
 
 <Drawer>
 	<div class="p-8 max-w-96">
-		<img alt="Headshot for artist, painter, and sculpter Jacqui Dorsey" src={headshot} />
+		<enhanced:img
+			alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
+			src={headshot}
+			sizes="min(1280px, 100vw)"
+		/>
 		<Navigation class="pt-8" />
 	</div>
 </Drawer>
-<AppShell slotSidebarLeft="w-0 lg:w-64" class="max-w-screen-xl bg-surface-50-900-token p-8">
+<AppShell
+	slotSidebarLeft="w-0 lg:w-64"
+	class="max-w-screen-xl bg-surface-50-900-token p-8"
+	slotFooter="mt-8"
+>
 	<svelte:fragment slot="header">
 		<AppBar padding="px-8 py-4" background="bg-surface-50-900-token">
 			<svelte:fragment slot="lead">
@@ -50,12 +58,18 @@
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
 		<div class="px-8 pt-4">
-			<img alt="Headshot for artist, painter, and sculpter Jacqui Dorsey" src={headshot} />
+			<enhanced:img
+				alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
+				src={headshot}
+				sizes="min(1280px, 100vw)"
+			/>
 			<Navigation class="pt-8" />
 		</div>
 	</svelte:fragment>
-	<svelte:fragment slot="footer"
-		>Copyright © 2026 Jacqui Dorsey. All rights reserved.</svelte:fragment
-	>
+	<svelte:fragment slot="footer">
+		<span class="text-xs md:text-sm lg:text-base">
+			Copyright © 2026 Jacqui Dorsey. All rights reserved.
+		</span>
+	</svelte:fragment>
 	<slot />
 </AppShell>
