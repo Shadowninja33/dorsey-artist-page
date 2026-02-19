@@ -23,9 +23,10 @@
 <Drawer>
 	<div class="p-8 max-w-96">
 		<enhanced:img
+			fetchpriority="high"
 			alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
 			src={headshot}
-			sizes="min(1280px, 100vw)"
+			sizes="min(2156px, 100vw)"
 		/>
 		<Navigation class="pt-8" />
 	</div>
@@ -59,9 +60,10 @@
 	<svelte:fragment slot="sidebarLeft">
 		<div class="px-8 pt-4">
 			<enhanced:img
+				fetchpriority="high"
 				alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
 				src={headshot}
-				sizes="min(1280px, 100vw)"
+				sizes="min(2156px, 100vw)"
 			/>
 			<Navigation class="pt-8" />
 		</div>

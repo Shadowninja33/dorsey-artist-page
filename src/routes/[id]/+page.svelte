@@ -45,7 +45,9 @@
 
 	<div class="overflow-auto">
 		<enhanced:img
+			fetchpriority="high"
 			class="mx-auto w-auto h-[200px] sm:h-[400px]"
+			sizes="min(2156px, 100vw)"
 			src={selectedImage.src}
 			alt={selectedImage.alt}
 		/>
@@ -71,7 +73,7 @@
 				>
 					<enhanced:img
 						class="h-48 w-auto {i === selectedImageIndex ? 'opacity-90' : 'opacity-60'}"
-						sizes="min(1280px, 100vw)"
+						sizes="min(2156px, 100vw)"
 						src={image.src}
 						alt={image.alt}
 					/>
