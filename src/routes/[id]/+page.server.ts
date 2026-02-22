@@ -14,6 +14,10 @@ export function load({ params }: { params: { id: string } }) {
 		pieceIndex,
 		piece,
 		previousArtPiece,
-		nextArtPiece
+		nextArtPiece,
+		seoData: {
+			title: piece.name,
+			description: `Information about and pictures of the art piece ${piece.name} by artist, sculptor, and painter Jacqui Dorsey`
+		}
 	};
 }

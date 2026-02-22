@@ -9,7 +9,12 @@
 	$: selectedImage = data.piece.images[selectedImageIndex];
 </script>
 
-<nav class="flex justify-between px-8 py-4">
+<svelte:head>
+	<title>Jacqui Dorsey | {data.seoData.title}</title>
+	<meta name="description" content={data.seoData.description} />
+</svelte:head>
+
+<nav class="flex justify-between py-4">
 	<div class="flex justify-start">
 		{#if data.previousArtPiece?.id}
 			<a class="underline" href={data.previousArtPiece.id}>Previous</a>
