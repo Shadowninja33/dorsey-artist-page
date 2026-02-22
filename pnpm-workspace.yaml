@@ -4,4 +4,5 @@ ignoredBuiltDependencies:
   - svelte-preprocess
 
 onlyBuiltDependencies:
+  - '@swc/core'
   - workerd

@@ -52,7 +52,6 @@
 		<enhanced:img
 			fetchpriority="high"
 			class="mx-auto w-auto h-[200px] sm:h-[400px]"
-			sizes="min(2156px, 100vw)"
 			src={selectedImage.src}
 			alt={selectedImage.alt}
 		/>
@@ -69,7 +68,7 @@
 	</div>
 
 	{#if data.piece.images.length > 1}
-		<div class="w-full flex space-x-4 justify-center">
+		<div class="w-full min-h-fit flex space-x-4 justify-center overflow-x-auto">
 			{#each data.piece.images as image, i}
 				<button
 					type="button"
@@ -77,8 +76,8 @@
 					aria-label="Select {image.alt}"
 				>
 					<enhanced:img
-						class="h-48 w-auto {i === selectedImageIndex ? 'opacity-90' : 'opacity-60'}"
-						sizes="min(2156px, 100vw)"
+						class="{i === selectedImageIndex ? 'opacity-90' : 'opacity-60'} h-auto"
+						sizes="50px"
 						src={image.src}
 						alt={image.alt}
 					/>

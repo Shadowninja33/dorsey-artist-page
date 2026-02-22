@@ -10,7 +10,7 @@
 			<enhanced:img
 				fetchpriority={i < 9 ? 'high' : 'low'}
 				class="h-auto max-w-full rounded-lg"
-				sizes="min(2156px, 100vw)"
+				sizes="(min-width:1280px) 400px, (min-width:600px) 200px, 50px"
 				src={piece.images[0].src}
 				alt={piece.images[0].alt}
 			/>

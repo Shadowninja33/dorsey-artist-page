@@ -26,7 +26,6 @@
 			fetchpriority="high"
 			alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
 			src={headshot}
-			sizes="min(2156px, 100vw)"
 		/>
 		<Navigation class="pt-8" />
 	</div>
@@ -63,7 +62,6 @@
 				fetchpriority="high"
 				alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
 				src={headshot}
-				sizes="min(2156px, 100vw)"
 			/>
 			<Navigation class="pt-8" />
 		</div>
