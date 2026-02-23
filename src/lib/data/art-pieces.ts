@@ -1,20 +1,66 @@
-import aDaysWork from '$lib/images/art/a-days-work.jpg?enhanced';
-import dorieMillerMural from '$lib/images/art/dorie-miller-mural.jpg?enhanced';
-import dorieMillerMuralLeft from '$lib/images/art/dorie-miller-mural-left.jpg?enhanced';
-import dorieMillerMuralPassage from '$lib/images/art/dorie-miller-mural-passage.jpg?enhanced';
-import dorieMillerMuralRight from '$lib/images/art/dorie-miller-mural-right.jpg?enhanced';
-import emilyMorgan from '$lib/images/art/emily-morgan.jpg?enhanced';
-import fatherAndChild from '$lib/images/art/father-and-child.jpg?enhanced';
-import foundingMothersMuralAndArtist from '$lib/images/art/founding-mothers-mural-and-artist.jpg?enhanced';
-import foundingMothersMuralPassage from '$lib/images/art/founding-mothers-mural-passage.jpg?enhanced';
-import musician from '$lib/images/art/musician.jpg?enhanced';
-import nursing from '$lib/images/art/nursing.jpg?enhanced';
-import seamstress from '$lib/images/art/seamstress.jpg?enhanced';
-import woman from '$lib/images/art/woman.jpg?enhanced';
-import sisters from '$lib/images/art/sisters.jpg?enhanced';
-import sisters2 from '$lib/images/art/sisters-2.jpg?enhanced';
-import generations from '$lib/images/art/generations.jpg?enhanced';
-import grandfather from '$lib/images/art/grandfather.jpg?enhanced';
+import type { Picture } from '../../types';
+
+const imageModules = import.meta.glob(
+	'/src/lib/images/art/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}',
+	{
+		eager: true,
+		query: {
+			enhanced: true,
+			w: '2560;1280;640;400;200;50'
+		}
+	}
+) as Record<ImageUrl, { default: Picture }>;
+
+const imagePath = '/src/lib/images/art/' as const;
+type ImagePath = typeof imagePath;
+type ImageUrl = `${ImagePath}${ImageName}`;
+
+const getImageUrl = (name: ImageName): ImageUrl => `${imagePath}${name}`;
+
+const getImage = (name: ImageName) => {
+	const url = getImageUrl(name);
+	return imageModules[url].default;
+};
+
+const ImageNames = [
+	'a-days-work.jpg',
+	'dorie-miller-mural.jpg',
+	'dorie-miller-mural-left.jpg',
+	'dorie-miller-mural-passage.jpg',
+	'dorie-miller-mural-right.jpg',
+	'emily-morgan.jpg',
+	'father-and-child.jpg',
+	'founding-mothers-mural-and-artist.jpg',
+	'founding-mothers-mural-passage.jpg',
+	'musician.jpg',
+	'nursing.jpg',
+	'seamstress.jpg',
+	'woman.jpg',
+	'sisters.jpg',
+	'sisters-2.jpg',
+	'generations.jpg',
+	'grandfather.jpg'
+] as const;
+
+type ImageName = (typeof ImageNames)[number];
+
+const aDaysWork = getImage('a-days-work.jpg');
+const dorieMillerMural = getImage('dorie-miller-mural.jpg');
+const dorieMillerMuralLeft = getImage('dorie-miller-mural-left.jpg');
+const dorieMillerMuralPassage = getImage('dorie-miller-mural-passage.jpg');
+const dorieMillerMuralRight = getImage('dorie-miller-mural-right.jpg');
+const emilyMorgan = getImage('emily-morgan.jpg');
+const fatherAndChild = getImage('father-and-child.jpg');
+const foundingMothersMuralAndArtist = getImage('founding-mothers-mural-and-artist.jpg');
+const foundingMothersMuralPassage = getImage('founding-mothers-mural-passage.jpg');
+const musician = getImage('musician.jpg');
+const nursing = getImage('nursing.jpg');
+const seamstress = getImage('seamstress.jpg');
+const woman = getImage('woman.jpg');
+const sisters = getImage('sisters.jpg');
+const sisters2 = getImage('sisters-2.jpg');
+const generations = getImage('generations.jpg');
+const grandfather = getImage('grandfather.jpg');
 
 type Tuple<T, N extends number, A extends unknown[]> = A extends { length: N }
 	? A
@@ -31,7 +77,7 @@ export interface ArtPiece {
 }
 
 export interface Image {
-	src: typeof aDaysWork;
+	src: Picture;
 	alt: string;
 }
 

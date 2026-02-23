@@ -51,7 +51,8 @@
 	<div class="overflow-auto">
 		<enhanced:img
 			fetchpriority="high"
-			class="mx-auto w-auto h-[200px] sm:h-[400px]"
+			class="mx-auto w-auto max-h-56 sm:max-h-96"
+			sizes="min(2560px, 100vw)"
 			src={selectedImage.src}
 			alt={selectedImage.alt}
 		/>
