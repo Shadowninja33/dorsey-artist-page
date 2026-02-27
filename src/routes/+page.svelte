@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
 	import ArtGallery from '$lib/components/art/art-gallery.svelte';
-	export let data;
+	let { data } = $props();
 </script>
 
 <svelte:head>

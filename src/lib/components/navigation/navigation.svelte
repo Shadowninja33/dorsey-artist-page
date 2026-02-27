@@ -1,8 +1,12 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
-	let className = '';
-	export { className as class };
+	interface Props {
+		class?: string;
+	}
+
+	let { class: className = '' }: Props = $props();
+	
 
 	const drawerStore = getDrawerStore();
 
@@ -16,12 +20,12 @@
 		<li>
 			<a
 				href="/"
-				class:is-active={$page.route.id === '/' || $page.route.id === '/[id]'}
-				on:click={drawerClose}>Homepage</a
+				class:is-active={page.route.id === '/' || page.route.id === '/[id]'}
+				onclick={drawerClose}>Homepage</a
 			>
 		</li>
 		<li>
-			<a href="/about" class:is-active={$page.route.id === '/about'} on:click={drawerClose}>About</a
+			<a href="/about" class:is-active={page.route.id === '/about'} onclick={drawerClose}>About</a
 			>
 		</li>
 	</ul>
