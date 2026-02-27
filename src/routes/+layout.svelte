@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Navigation from '$lib/components/navigation/navigation.svelte';
 	import headshot from '$lib/images/dorsey-head-shot.png?enhanced';
-	import '../app.postcss';
+	import '../app.css';
 	import {
 		AppBar,
 		AppShell,
