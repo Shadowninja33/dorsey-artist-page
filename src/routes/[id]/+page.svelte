@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { generateGoogleMapsSearchUrl } from '$lib/utils/google-maps';
 
-	export let data;
+	let { data } = $props();
 
 	const noop: string = 'javascript:;';
 
-	$: selectedImageIndex = 0;
-	$: selectedImage = data.piece.images[selectedImageIndex];
+	let selectedImageIndex = $state(0);
+	
+	let selectedImage = $derived(data.piece.images[selectedImageIndex]);
 </script>
 
 <svelte:head>
@@ -73,7 +74,7 @@
 			{#each data.piece.images as image, i}
 				<button
 					type="button"
-					on:click={() => (selectedImageIndex = i)}
+					onclick={() => (selectedImageIndex = i)}
 					aria-label="Select {image.alt}"
 				>
 					<div class="w-[50px]">

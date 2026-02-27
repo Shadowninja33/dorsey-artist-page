@@ -1,7 +1,11 @@
 <script lang="ts">
 	import type { artPieces } from '$lib/data/art-pieces';
 
-	export let pieces: typeof artPieces;
+	interface Props {
+		pieces: typeof artPieces;
+	}
+
+	let { pieces }: Props = $props();
 </script>
 
 <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
