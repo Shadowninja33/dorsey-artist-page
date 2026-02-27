@@ -27,7 +27,7 @@
 	</ul>
 </nav>
 
-<style>
+<style lang="postcss">
 	a.is-active {
 		@apply bg-primary-500-400-token text-on-primary-token;
 	}
