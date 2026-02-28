@@ -12,7 +12,14 @@
 	// function drawerClose(): void {
 	// 	drawerStore.close();
 	// }
+
+	const setTheme = (theme: 'light' | 'dark') => (localStorage.theme = theme);
 </script>
+
+<div class="flex space">
+	<button onclick={(_event) => setTheme('light')} type="button">Light Mode</button>
+	<button onclick={(_event) => setTheme('dark')} type="button">Dark Mode</button>
+</div>
 
 <nav class="list-nav {className}">
 	<ul>
@@ -25,7 +32,7 @@
 	</ul>
 </nav>
 
-<style lang="postcss">
+<style lang="css">
 	/* a.is-active {
 		@apply bg-primary-500-400-token text-on-primary-token;
 	} */
