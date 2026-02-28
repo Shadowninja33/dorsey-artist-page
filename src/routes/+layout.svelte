@@ -1,7 +1,9 @@
 <script lang="ts">
+	import './layout.css';
 	import Navigation from '$lib/components/navigation/navigation.svelte';
 	import headshot from '$lib/images/dorsey-head-shot.png?enhanced';
 	import '../app.css';
+
 	// import {
 	// 	AppBar,
 	// 	AppShell,
@@ -11,6 +13,7 @@
 	// 	LightSwitch
 	// } from '@skeletonlabs/skeleton';
 	import { AppBar } from '@skeletonlabs/skeleton-svelte';
+
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
@@ -18,23 +21,24 @@
 	let { children }: Props = $props();
 
 	// initializeStores();
-
 	// const drawerStore = getDrawerStore();
-
 	// function drawerOpen(): void {
 	// 	drawerStore.open();
 	// }
 </script>
 
 <!-- <Drawer> -->
-<div class="p-8 max-w-96">
+
+<div class="max-w-96 p-8">
 	<enhanced:img
 		fetchpriority="high"
 		alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
 		src={headshot}
-	/>
+	></enhanced:img>
+
 	<Navigation class="pt-8" />
 </div>
+
 <!-- </Drawer> -->
 <!-- <AppShell
 	slotSidebarLeft="w-0 lg:w-64"
@@ -54,24 +58,25 @@
 					
 					{/snippet}
 			</AppBar> -->
+
 <AppBar>
 	<AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
 		<AppBar.Lead>
 			<div class="flex items-center">
-				<button class="lg:hidden btn btn-sm mr-4" aria-label="Open drawer">
+				<button class="btn btn-sm mr-4 lg:hidden" aria-label="Open drawer">
 					<span>
-						<svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
-							<rect width="100" height="20" />
-							<rect y="30" width="100" height="20" />
-							<rect y="60" width="100" height="20" />
+						<svg viewBox="0 0 100 80" class="fill-token h-4 w-4">
+							<rect width="100" height="20"></rect>
+							<rect y="30" width="100" height="20"></rect>
+							<rect y="60" width="100" height="20"></rect>
 						</svg>
 					</span>
 				</button>
 			</div>
 		</AppBar.Lead>
-		<AppBar.Headline>
-			<a href="/"><h1 class="uppercase text-2xl"></h1></a>
-		</AppBar.Headline>
+
+		<AppBar.Headline><a href="/"><h1 class="text-2xl uppercase"></h1></a></AppBar.Headline>
+
 		<AppBar.Trail>
 			<!-- <LightSwitch /> -->
 			<!-- 
@@ -91,17 +96,16 @@
 		fetchpriority="high"
 		alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
 		src={headshot}
-	/>
+	></enhanced:img>
+
 	<Navigation class="pt-8" />
 </div>
 
 <!-- {/snippet}
 	{#snippet footer()} -->
-
-<span class="text-xs md:text-sm lg:text-base">
-	Copyright © 2026 Jacqui Dorsey. All rights reserved.
-</span>
-
+<span class="text-xs md:text-sm lg:text-base"
+	>Copyright © 2026 Jacqui Dorsey. All rights reserved.</span
+>
 <!-- {/snippet} -->
 {@render children?.()}
 <!-- </AppShell> -->
