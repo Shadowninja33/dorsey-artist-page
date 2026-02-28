@@ -1,8 +1,12 @@
 @import 'tailwindcss';
 
-:root [data-theme='hamlindigo'] {
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton-svelte';
+@import '@skeletonlabs/skeleton/themes/hamlindigo';
+
+/* :root [data-theme='hamlindigo'] {
 	background-image: none;
-}
+} */
 
 html,
 body {
