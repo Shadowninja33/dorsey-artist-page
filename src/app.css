@@ -10,7 +10,7 @@
 
 html,
 body {
-	@apply h-full overflow-hidden bg-surface-50-900-token;
+	/* @apply h-full overflow-hidden bg-surface-50-900-token; */
 }
 
 @custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
