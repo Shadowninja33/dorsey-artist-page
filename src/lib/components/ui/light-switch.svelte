@@ -1,39 +1,39 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	// import { getDrawerStore } from '@skeletonlabs/skeleton';
-	interface Props {
-		class?: string;
-	}
+	import { MoonIcon, SunIcon } from '@lucide/svelte';
+	import { Switch } from '@skeletonlabs/skeleton-svelte';
 
-	let { class: className = '' }: Props = $props();
+	let checked = $state(false);
 
-	// const drawerStore = getDrawerStore();
+	$effect(() => {
+		const mode = localStorage.getItem('mode') || 'light';
+		checked = mode === 'dark';
+	});
 
-	// function drawerClose(): void {
-	// 	drawerStore.close();
-	// }
-
-	const setTheme = (theme: 'light' | 'dark') => (localStorage.theme = theme);
+	const onCheckedChange = (event: { checked: boolean }) => {
+		const mode = event.checked ? 'dark' : 'light';
+		document.documentElement.setAttribute('data-mode', mode);
+		localStorage.setItem('mode', mode);
+		checked = event.checked;
+	};
 </script>
 
-<div class="flex space">
-	<button onclick={(_event) => setTheme('light')} type="button">Light Mode</button>
-	<button onclick={(_event) => setTheme('dark')} type="button">Dark Mode</button>
-</div>
+<svelte:head>
+	<script>
+		document.documentElement.setAttribute('data-mode', localStorage.getItem('mode') || 'dark');
+	</script>
+</svelte:head>
 
-<nav class="list-nav {className}">
-	<ul>
-		<li>
-			<a href="/" class:is-active={page.route.id === '/' || page.route.id === '/[id]'}>Homepage</a>
-		</li>
-		<li>
-			<a href="/about" class:is-active={page.route.id === '/about'}>About</a>
-		</li>
-	</ul>
-</nav>
-
-<style lang="css">
-	/* a.is-active {
-		@apply bg-primary-500-400-token text-on-primary-token;
-	} */
-</style>
+<Switch {checked} {onCheckedChange}>
+	<Switch.Control>
+		<Switch.Thumb>
+			<Switch.Context>
+				{#if checked}
+					<MoonIcon class="size-3" />
+				{:else}
+					<SunIcon class="size-3" />
+				{/if}
+			</Switch.Context>
+		</Switch.Thumb>
+	</Switch.Control>
+	<Switch.HiddenInput />
+</Switch>

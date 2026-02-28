@@ -13,6 +13,7 @@
 	// 	LightSwitch
 	// } from '@skeletonlabs/skeleton';
 	import { AppBar } from '@skeletonlabs/skeleton-svelte';
+	import LightSwitch from '$lib/components/ui/light-switch.svelte';
 
 	interface Props {
 		children?: import('svelte').Snippet;
@@ -78,7 +79,7 @@
 		<AppBar.Headline><a href="/"><h1 class="text-2xl uppercase"></h1></a></AppBar.Headline>
 
 		<AppBar.Trail>
-			<!-- <LightSwitch /> -->
+			<LightSwitch />
 			<!-- 
 			<button type="button" class="btn-icon hover:preset-tonal"><SearchIcon class="size-6" /></button>
 			<button type="button" class="btn-icon hover:preset-tonal"><CalendarIcon class="size-6" /></button>
