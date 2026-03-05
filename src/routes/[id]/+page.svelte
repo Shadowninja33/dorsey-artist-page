@@ -6,7 +6,7 @@
 	const noop: string = 'javascript:;';
 
 	let selectedImageIndex = $state(0);
-	
+
 	let selectedImage = $derived(data.piece.images[selectedImageIndex]);
 </script>
 
@@ -47,12 +47,12 @@
 	</div>
 </nav>
 <section class="flex flex-col space-y-8">
-	<h1 class="text-center h2">{'name' in data.piece ? data.piece.name : ''}</h1>
+	<h1 class="h2 text-center">{'name' in data.piece ? data.piece.name : ''}</h1>
 
-	<div class="overflow-auto">
+	<div class="">
 		<enhanced:img
 			fetchpriority="high"
-			class="mx-auto w-auto max-h-56 sm:max-h-96"
+			class="mx-auto max-h-56 w-auto sm:max-h-96"
 			sizes="min(2560px, 100vw)"
 			src={selectedImage.src}
 			alt={selectedImage.alt}
@@ -70,7 +70,7 @@
 	</div>
 
 	{#if data.piece.images.length > 1}
-		<div class="w-full min-h-fit flex space-x-4 justify-center overflow-x-auto">
+		<div class="flex min-h-fit w-full justify-center space-x-4 overflow-x-auto">
 			{#each data.piece.images as image, i}
 				<button
 					type="button"

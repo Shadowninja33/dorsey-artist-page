@@ -1,17 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	// import { getDrawerStore } from '@skeletonlabs/skeleton';
 	interface Props {
 		class?: string;
 	}
 
 	let { class: className = '' }: Props = $props();
-
-	// const drawerStore = getDrawerStore();
-
-	// function drawerClose(): void {
-	// 	drawerStore.close();
-	// }
 </script>
 
 <nav class="list-nav {className}">
@@ -26,7 +19,8 @@
 </nav>
 
 <style lang="postcss">
-	/* a.is-active {
-		@apply bg-primary-500-400-token text-on-primary-token;
-	} */
+	@reference "../../../app.css";
+	a.is-active {
+		/* @apply bg-primary-500 text-primary-contrast-500; */
+	}
 </style>
