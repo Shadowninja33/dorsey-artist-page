@@ -6,7 +6,7 @@ const imageModules = import.meta.glob(
 		eager: true,
 		query: {
 			enhanced: true,
-			w: '2560;1280;640;400;200;50'
+			w: '2560;1280;640;400;200;100;50'
 		}
 	}
 ) as Record<ImageUrl, { default: Picture }>;
