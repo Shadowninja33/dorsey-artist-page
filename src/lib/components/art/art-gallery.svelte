@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { artPieces } from '$lib/data/art-pieces';
+	import { resolve } from '$app/paths';
 
 	interface Props {
 		pieces: typeof artPieces;
@@ -8,16 +9,26 @@
 	let { pieces }: Props = $props();
 </script>
 
-<section class="grid grid-cols-2 md:grid-cols-4 gap-4">
-	{#each pieces as piece, i}
-		<a href="/{piece.id}" class="hover:brightness-50">
+<section class="flex flex-wrap gap-4">
+	{#each pieces as piece (piece.id)}
+		<a href={resolve('/[id]', { id: piece.id })} class="w-25 hover:brightness-50 md:w-50">
 			<enhanced:img
-				fetchpriority={i < 9 ? 'high' : 'low'}
-				class="h-auto max-w-full rounded-lg"
-				sizes="(min-width:1280px) 400px, (min-width:600px) 200px, 50px"
+				class="rounded-lg"
+				sizes="(min-width:600px) 200px, 100px"
 				src={piece.images[0].src}
 				alt={piece.images[0].alt}
 			/>
+			<div class="w-full text-center text-lg">
+				{piece.name}
+			</div>
 		</a>
 	{/each}
 </section>
+
+<style lang="postcss">
+	@reference "tailwindcss";
+
+	/* section {
+		grid-template-columns: repeat(minmax(1fr, 400px));
+	} */
+</style>
