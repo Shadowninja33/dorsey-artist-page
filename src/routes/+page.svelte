@@ -7,6 +7,6 @@
 	<title>{data.seoData.title}</title>
 	<meta name="description" content={data.seoData.description} />
 </svelte:head>
-<div class="container mx-auto pt-4 px-8 space-y-8">
+<div class="container mx-auto space-y-8 p-4">
 	<ArtGallery pieces={data.artPieces} />
 </div>

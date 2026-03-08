@@ -92,10 +92,10 @@
 	</AppBar.Toolbar>
 </AppBar>
 <!-- Grid Columns -->
-<div class=" flex">
+<div class="flex">
 	<!-- Left Sidebar. Hidden on mobile -->
-	<aside class="absolute h-full w-48 md:relative md:block">
-		<div class="px-4 pt-4">
+	<aside class="border-surface-200-800 qborder max-w-48 flex-0">
+		<div class="p-4">
 			<enhanced:img
 				fetchpriority="high"
 				alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
@@ -103,11 +103,11 @@
 			></enhanced:img>
 
 			<!-- <Navigation class="pt-8" /> -->
-			<ul>
+			<ul class="py-4">
 				{#each navLinks as link (link)}
 					{@const Icon = link.icon}
-					<a class="btn hover:preset-tonal content-start px-2" href={resolve(link.href)}>
-						<Icon class="size-4" />
+					<a class="btn hover:preset-tonal mb-2 w-full justify-start" href={resolve(link.href)}>
+						<Icon class="size-4 " />
 
 						<span class="text-base text-wrap">
 							{link.label}
