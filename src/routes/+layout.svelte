@@ -95,7 +95,7 @@
 <!-- Grid Columns -->
 <div class="flex">
 	<!-- Left Sidebar. Hidden on mobile -->
-	<aside class="border-surface-200-800 qborder max-w-48 flex-0">
+	<aside class="border-surface-200-800 max-w-48 flex-0 border">
 		<div class="p-4">
 			<enhanced:img
 				fetchpriority="high"
