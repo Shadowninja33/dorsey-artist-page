@@ -74,7 +74,7 @@
 <!-- <div class="grid h-screen grid-rows-[auto_1fr_auto]"> -->
 <!-- Header -->
 
-<AppBar class="sticky top-0">
+<AppBar class="sticky top-0 z-20">
 	<AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
 		<AppBar.Lead>
 			<button type="button" aria-label="Open Sidebar" class="btn" onclick={() => toggleSidebar()}>
@@ -95,7 +95,9 @@
 <!-- Grid Columns -->
 <div class="flex">
 	<!-- Left Sidebar. Hidden on mobile -->
-	<aside class="border-surface-200-800 max-w-48 flex-0 border">
+	<aside
+		class="border-surface-200-800 sticky top-17 z-10 hidden h-[calc(100vh-68px)] self-start border md:flex"
+	>
 		<div class="p-4">
 			<enhanced:img
 				fetchpriority="high"
@@ -103,7 +105,7 @@
 				src={headshot}
 			></enhanced:img>
 
-			<!-- <Navigation class="pt-8" /> -->
+			<!--  <Navigation class="pt-8" /> -->
 			<ul class="py-4">
 				{#each navLinks as link (link)}
 					{@const Icon = link.icon}
@@ -119,13 +121,15 @@
 		</div>
 	</aside>
 	<!-- Main Content -->
-	<main class="grow">
+	<main class="grow px-8 py-4">
 		{@render children?.()}
 	</main>
 </div>
 
 <!-- Footer -->
-<footer class="  bg-surface-200-800 px-4 pt-8 pb-4 text-right text-xs md:text-sm lg:text-base">
+<footer
+	class="border-surface-200-800 h-12 border p-2 text-left text-xs md:h-16 md:p-4 md:text-right md:text-sm lg:text-base"
+>
 	Copyright © 2026 Jacqui Dorsey. All rights reserved.
 </footer>
 
