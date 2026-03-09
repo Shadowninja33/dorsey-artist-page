@@ -37,7 +37,7 @@
 	</div>
 </nav>
 <section class="flex flex-col space-y-8">
-	<h1 class="h2 text-center">{'name' in data.piece ? data.piece.name : ''}</h1>
+	<h1 class="h4 md:h2 text-center">{'name' in data.piece ? data.piece.name : ''}</h1>
 
 	<div class="">
 		<enhanced:img
