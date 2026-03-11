@@ -73,7 +73,7 @@
 <!-- <div class="grid h-screen grid-rows-[auto_1fr_auto]"> -->
 <!-- Header -->
 
-<AppBar class="sticky top-0 z-20">
+<AppBar class="sticky top-0 z-20 h-(--header-height)">
 	<AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
 		<AppBar.Lead>
 			<button type="button" aria-label="Open Sidebar" class="btn" onclick={() => toggleSidebar()}>
@@ -91,43 +91,41 @@
 		</AppBar.Trail>
 	</AppBar.Toolbar>
 </AppBar>
-<!-- Grid Columns -->
-<div class="flex">
-	<!-- Left Sidebar. Hidden on mobile -->
-	<aside
-		class="border-surface-200-800 sticky top-17 z-10 hidden h-[calc(100vh-68px)] self-start border md:flex"
-	>
-		<div class="p-4">
-			<enhanced:img
-				fetchpriority="high"
-				alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
-				src={headshot}
-			></enhanced:img>
+<!-- Left Sidebar. Hidden on mobile -->
+<aside
+	class="border-surface-200-800 sticky top-(--sidebar-top) z-10 hidden h-(--sidebar-height) max-w-36 min-w-36 self-start border md:flex"
+>
+	<div class="p-4">
+		<enhanced:img
+			fetchpriority="high"
+			alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
+			src={headshot}
+		></enhanced:img>
 
-			<!--  <Navigation class="pt-8" /> -->
-			<ul class="py-4">
-				{#each navLinks as link (link)}
-					{@const Icon = link.icon}
-					<a class="btn hover:preset-tonal mb-2 w-full justify-start" href={resolve(link.href)}>
-						<Icon class="size-4 " />
+		<!--  <Navigation class="pt-8" /> -->
+		<ul class="py-4">
+			{#each navLinks as link (link)}
+				{@const Icon = link.icon}
+				<a class="btn hover:preset-tonal mb-2 w-full justify-start" href={resolve(link.href)}>
+					<Icon class="size-4 " />
 
-						<span class="text-base text-wrap">
-							{link.label}
-						</span>
-					</a>
-				{/each}
-			</ul>
-		</div>
-	</aside>
-	<!-- Main Content -->
-	<main class="grow px-8 py-4">
-		{@render children?.()}
-	</main>
-</div>
+					<span class="text-base text-wrap">
+						{link.label}
+					</span>
+				</a>
+			{/each}
+		</ul>
+	</div>
+</aside>
+
+<!-- Main Content -->
+<main class="relative top-0 left-36 px-8 py-4">
+	{@render children?.()}
+</main>
 
 <!-- Footer -->
 <footer
-	class="border-surface-200-800 h-12 border p-2 text-left text-xs md:h-16 md:p-4 md:text-right md:text-sm lg:text-base"
+	class="border-surface-200-800 h-(--footer-height) border p-2 text-right text-xs md:p-4 md:text-sm lg:text-base"
 >
 	Copyright © 2026 Jacqui Dorsey. All rights reserved.
 </footer>
