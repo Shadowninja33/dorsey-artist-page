@@ -4,8 +4,6 @@
 
 	let { data } = $props();
 
-	const noop: string = 'javascript:;';
-
 	let selectedImageIndex = $state(0);
 
 	let selectedImage = $derived(data.piece.images[selectedImageIndex]);
@@ -60,7 +58,9 @@
 	</div>
 
 	{#if data.piece.images.length > 1}
-		<div class="flex w-full justify-center space-x-4 self-center overflow-x-auto">
+		<div
+			class="flex max-h-24 min-h-fit w-full max-w-md justify-center space-x-4 self-center overflow-x-auto"
+		>
 			{#each data.piece.images as image, i}
 				<button
 					type="button"

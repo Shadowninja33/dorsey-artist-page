@@ -9,7 +9,7 @@
 		content="Information about artist, sculptor, and painter Jacqui Dorsey"
 	/>
 </svelte:head>
-<article>
+<article class="">
 	<enhanced:img
 		fetchpriority="high"
 		class="mx-auto mb-8 md:hidden"

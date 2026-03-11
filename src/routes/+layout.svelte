@@ -21,58 +21,7 @@
 		{ label: 'Home', href: '/', icon: HouseIcon },
 		{ label: 'About', href: '/about', icon: BookIcon }
 	] as const;
-	// <li>
-	// 		<a href="/" class:is-active={page.route.id === '/' || page.route.id === '/[id]'}>Homepage</a>
-	// 	</li>
-	// 	<li>
-	// 		<a href="/about" class:is-active={page.route.id === '/about'}>About</a>
-	// 	</li>
 </script>
-
-<!-- <Drawer> -->
-
-<!-- <div class="max-w-96 p-8">
-	<enhanced:img
-		fetchpriority="high"
-		alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
-		src={headshot}
-	></enhanced:img>
-
-	<Navigation class="pt-8" />
-</div> -->
-
-<!-- </Drawer> -->
-<!-- <AppShell
-	slotSidebarLeft="w-0 lg:w-64"
-	class="max-w-screen-xl bg-surface-50-900-token py-4 px-8"
-	slotFooter="mt-4"
->
-	{#snippet header()}
-	
-			<AppBar padding="pb-8" background="bg-surface-50-900-token">
-				{#snippet lead()}
-					
-						
-					
-					{/snippet}
-				{#snippet trail()}
-					
-					
-					{/snippet}
-			</AppBar> -->
-
-<!-- 		
-	{/snippet}
-	{#snippet sidebarLeft()} -->
-
-<!-- {/snippet}
-	{#snippet footer()} -->
-<!-- <span class="text-xs md:text-sm lg:text-base"></span> -->
-<!-- {/snippet} -->
-<!-- </AppShell> -->
-
-<!-- <div class="grid h-screen grid-rows-[auto_1fr_auto]"> -->
-<!-- Header -->
 
 <AppBar class="sticky top-0 z-20 h-(--header-height)">
 	<AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
@@ -93,37 +42,38 @@
 	</AppBar.Toolbar>
 </AppBar>
 <!-- Left Sidebar. Hidden on mobile -->
-<aside
-	class="border-surface-200-800 sticky top-(--sidebar-top) z-10 hidden h-(--sidebar-height) max-w-36 min-w-36 self-start border md:flex"
->
-	<div class="p-4">
-		<enhanced:img
-			fetchpriority="high"
-			alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
-			src={headshot}
-		></enhanced:img>
+<div class="flex">
+	<aside
+		class="border-surface-200-800 sticky top-(--sidebar-top) z-10 hidden h-(--sidebar-height) w-36 self-start border-r md:flex"
+	>
+		<div class="p-4">
+			<enhanced:img
+				fetchpriority="high"
+				alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"
+				src={headshot}
+			></enhanced:img>
 
-		<!--  <Navigation class="pt-8" /> -->
-		<ul class="py-4">
-			{#each navLinks as link (link)}
-				{@const Icon = link.icon}
-				<a class="btn hover:preset-tonal mb-2 w-full justify-start" href={resolve(link.href)}>
-					<Icon class="size-4 " />
+			<!--  <Navigation class="pt-8" /> -->
+			<ul class="py-4">
+				{#each navLinks as link (link)}
+					{@const Icon = link.icon}
+					<a class="btn hover:preset-tonal mb-2 w-full justify-start" href={resolve(link.href)}>
+						<Icon class="size-4 " />
 
-					<span class="text-base text-wrap">
-						{link.label}
-					</span>
-				</a>
-			{/each}
-		</ul>
-	</div>
-</aside>
+						<span class="text-base text-wrap">
+							{link.label}
+						</span>
+					</a>
+				{/each}
+			</ul>
+		</div>
+	</aside>
 
-<!-- Main Content -->
-<main class="relative top-0 left-36 px-8 py-4">
-	{@render children?.()}
-</main>
-
+	<!-- Main Content -->
+	<main class="flex-1 px-8 py-4">
+		{@render children?.()}
+	</main>
+</div>
 <!-- Footer -->
 <footer
 	class="border-surface-200-800 h-(--footer-height) border p-2 text-right text-xs md:p-4 md:text-sm lg:text-base"
