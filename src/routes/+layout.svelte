@@ -33,7 +33,7 @@
 <AppShell
 	slotSidebarLeft="w-0 lg:w-64"
 	class="max-w-screen-xl bg-surface-50-900-token p-8"
-	slotFooter="mt-8"
+	slotFooter="mt-4"
 >
 	<svelte:fragment slot="header">
 		<AppBar padding="px-8 py-4" background="bg-surface-50-900-token">

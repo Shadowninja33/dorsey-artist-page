@@ -69,19 +69,21 @@
 	</div>
 
 	{#if data.piece.images.length > 1}
-		<div class="w-full min-h-fit flex space-x-4 justify-center overflow-x-auto">
+		<div class="w-full self-center flex space-x-4 justify-center overflow-x-auto">
 			{#each data.piece.images as image, i}
 				<button
 					type="button"
 					on:click={() => (selectedImageIndex = i)}
 					aria-label="Select {image.alt}"
 				>
+				<div class="w-[50px]">
 					<enhanced:img
 						class="{i === selectedImageIndex ? 'opacity-90' : 'opacity-60'} h-auto"
 						sizes="50px"
 						src={image.src}
 						alt={image.alt}
 					/>
+				</div>
 				</button>
 			{/each}
 		</div>
