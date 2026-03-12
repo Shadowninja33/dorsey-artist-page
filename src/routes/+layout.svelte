@@ -32,11 +32,11 @@
 </Drawer>
 <AppShell
 	slotSidebarLeft="w-0 lg:w-64"
-	class="max-w-screen-xl bg-surface-50-900-token p-8"
+	class="max-w-screen-xl bg-surface-50-900-token py-4 px-8"
 	slotFooter="mt-4"
 >
 	<svelte:fragment slot="header">
-		<AppBar padding="px-8 py-4" background="bg-surface-50-900-token">
+		<AppBar padding="pb-8" background="bg-surface-50-900-token">
 			<svelte:fragment slot="lead">
 				<div class="flex items-center">
 					<button class="lg:hidden btn btn-sm mr-4" aria-label="Open drawer" on:click={drawerOpen}>
@@ -57,7 +57,7 @@
 		</AppBar>
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
-		<div class="px-8 pt-4">
+		<div>
 			<enhanced:img
 				fetchpriority="high"
 				alt="Headshot for artist, painter, and sculpter Jacqui Dorsey"

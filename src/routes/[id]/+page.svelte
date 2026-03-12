@@ -14,7 +14,7 @@
 	<meta name="description" content={data.seoData.description} />
 </svelte:head>
 
-<nav class="flex justify-between py-4">
+<nav class="flex justify-between">
 	<div class="flex justify-start">
 		{#if data.previousArtPiece?.id}
 			<a class="underline" href={data.previousArtPiece.id}>Previous</a>
@@ -45,13 +45,13 @@
 		</a>
 	</div>
 </nav>
-<section class="flex flex-col space-y-8">
+<section class="flex flex-col space-y-4">
 	<h1 class="text-center h2">{'name' in data.piece ? data.piece.name : ''}</h1>
 
 	<div class="overflow-auto">
 		<enhanced:img
 			fetchpriority="high"
-			class="mx-auto w-auto max-h-56 sm:max-h-96"
+			class="mx-auto w-auto max-h-56 sm:max-h-72"
 			sizes="min(2560px, 100vw)"
 			src={selectedImage.src}
 			alt={selectedImage.alt}
@@ -76,14 +76,14 @@
 					on:click={() => (selectedImageIndex = i)}
 					aria-label="Select {image.alt}"
 				>
-				<div class="w-[50px]">
-					<enhanced:img
-						class="{i === selectedImageIndex ? 'opacity-90' : 'opacity-60'} h-auto"
-						sizes="50px"
-						src={image.src}
-						alt={image.alt}
-					/>
-				</div>
+					<div class="w-[50px]">
+						<enhanced:img
+							class="{i === selectedImageIndex ? 'opacity-90' : 'opacity-60'} h-auto"
+							sizes="50px"
+							src={image.src}
+							alt={image.alt}
+						/>
+					</div>
 				</button>
 			{/each}
 		</div>
