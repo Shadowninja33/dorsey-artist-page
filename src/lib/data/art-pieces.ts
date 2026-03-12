@@ -134,7 +134,7 @@ export const artPieces: ArtPiece[] = [
 	},
 	{
 		id: 'ad0c879a-399b-4358-b8f8-e21a749a6d0a',
-		name: 'The Eastside Founding Mothers',
+		name: 'The Founding Mothers of Ellis Alley',
 		location: '210 Chestnut St, San Antonio, TX 78202',
 		images: [
 			{
@@ -147,7 +147,7 @@ export const artPieces: ArtPiece[] = [
 			}
 		],
 		description: [
-			`This is the "Founding Mothers Mural" located on the San Antonio East Side in an area known as Ellis Alley. When the civil war ended in 1865, new tax laws allowed ex-slaves to own property and pay taxes. Property was purchased in the east side area and divided among selected individuals who wanted to develop businesses in the area. When African Americans were first allowed to own property, land designated was the back streets and alleys on the eastside of San Antonio. The former slaves took these properties and developed them into a thriving self-sufficient community known as Ellis Alley. The city's "Black Eastside" emerged from the area surrounding this site, on what is now called Chestnut Street.`,
+			`This is the "Founding Mothers of Ellis Alley" mural located on the San Antonio East Side in an area known as Ellis Alley. When the civil war ended in 1865, new tax laws allowed ex-slaves to own property and pay taxes. Property was purchased in the east side area and divided among selected individuals who wanted to develop businesses in the area. When African Americans were first allowed to own property, land designated was the back streets and alleys on the eastside of San Antonio. The former slaves took these properties and developed them into a thriving self-sufficient community known as Ellis Alley. The city's "Black Eastside" emerged from the area surrounding this site, on what is now called Chestnut Street.`,
 
 			`A commemorative mural to Ellis Alley was commissioned by Sterling Houston and created by Artist Jacqui Dorsey celebrating the founding mothers of the east side. The East side Founding Mothers mural is located on Chestnut Street in the area formerly known as Ellis Alley. This mural identifies the "Eastside Founding Mothers" Artemisia Bowden, Mattie Briscoe, and Myra Hemmings.`,
 
@@ -164,17 +164,17 @@ export const artPieces: ArtPiece[] = [
 	},
 	{
 		id: 'c6988a2e-4a68-4c64-afb6-1151cc7a5715',
-		name: 'Seamstress',
+		name: 'The Way To Freedom',
 		images: [
 			{
 				src: seamstress,
-				alt: 'A sculpture of a colorfully dressed seamstress wearing a thimble and holding a piece of string'
+				alt: 'A sculpture of a colorfully dressed woman wearing a thimble and holding a piece of thread while she sews a blanket'
 			}
 		]
 	},
 	{
 		id: '1de3ea49-70c4-4b6b-a0f4-af9b7bec0a78',
-		name: 'Grandfather',
+		name: "Little Man You're Crying",
 		images: [
 			{
 				src: grandfather,
