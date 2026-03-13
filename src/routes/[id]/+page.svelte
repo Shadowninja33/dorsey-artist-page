@@ -14,8 +14,8 @@
 	<meta name="description" content={data.seoData.description} />
 </svelte:head>
 
-<nav class="flex justify-between">
-	<div class="flex justify-start">
+<nav class="flex bg-surface-50-900-token shadow-sm sticky top-0 z-10 justify-between py-4 pb-4">
+	<div class=" flex justify-start">
 		{#if data.previousArtPiece?.id}
 			<a class="underline" href={data.previousArtPiece.id}>Previous</a>
 		{:else}
@@ -48,7 +48,7 @@
 <section class="flex flex-col space-y-4">
 	<h1 class="text-center h2">{'name' in data.piece ? data.piece.name : ''}</h1>
 
-	<div class="overflow-auto">
+	<div>
 		<enhanced:img
 			fetchpriority="high"
 			class="mx-auto w-auto max-h-56 sm:max-h-72"

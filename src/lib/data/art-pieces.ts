@@ -95,6 +95,7 @@ export interface ArtPiece {
 export interface Image {
 	src: Picture;
 	alt: string;
+	width?: 1 | 2;
 }
 
 export const artPieces: ArtPiece[] = [
@@ -157,35 +158,26 @@ export const artPieces: ArtPiece[] = [
 		]
 	},
 	{
-		id: 'ad0c879a-399b-4358-b8f8-e21a749a6d0a',
-		name: 'The Founding Mothers of Ellis Alley',
-		location: '210 Chestnut St, San Antonio, TX 78202',
+		id: '3708b297-a8e5-4d85-aa00-cd87d5ec0c95',
+		name: 'Unnamed Jewelry Head One',
 		images: [
 			{
-				src: foundingMothersMuralAndArtist,
-				alt: 'A picture of Jacqui Dorsey (the artist) standing next to a mural she painted featuring 3 the Eastside founding mothers: Artemisia Bowden, Mattie Briscoe, and Myra Hemmings'
-			},
-			{
-				src: foundingMothersMuralPassage,
-				alt: `A picture of the passage shown on the lower left of The Founding Mother's Mural which reads: "Jacqui Dorsey and Douglass Elementary School"`
+				src: jewelryHead1,
+				alt: 'A blonde woman wearing a white hat and white and pink dress. The hat features a pink and green cloth accent, fastened via a pink button. Painted onto a wood known as jewelry head.'
 			}
-		],
-		description: [
-			`This is the "Founding Mothers of Ellis Alley" mural located on the San Antonio East Side in an area known as Ellis Alley. When the civil war ended in 1865, new tax laws allowed ex-slaves to own property and pay taxes. Property was purchased in the east side area and divided among selected individuals who wanted to develop businesses in the area. When African Americans were first allowed to own property, land designated was the back streets and alleys on the eastside of San Antonio. The former slaves took these properties and developed them into a thriving self-sufficient community known as Ellis Alley. The city's "Black Eastside" emerged from the area surrounding this site, on what is now called Chestnut Street.`,
-
-			`A commemorative mural to Ellis Alley was commissioned by Sterling Houston and created by Artist Jacqui Dorsey celebrating the founding mothers of the east side. The East side Founding Mothers mural is located on Chestnut Street in the area formerly known as Ellis Alley. This mural identifies the "Eastside Founding Mothers" Artemisia Bowden, Mattie Briscoe, and Myra Hemmings.`,
-
-			`Artemisia Bowden was born in 1902 to former slaves. After graduating high school, she was recruited by Episcopal Bishop James Steptoe Johnston; serve as a teacher at the St Phillips School for Negro Girls. She taught the girls English, Mathematics, Etiquette and Sewing. Ms. Bowden taught for 52 years, she became Dean Emeritus of St. Phillip's College. Under her tutelage St. Phillips became an industrial and accredited two-year college.`,
-
-			`Myra Lillian Davis-Hemmings was born in 1895 in the outskirts of Gonzales, Texas. She moved to San Antonio, Texas in 1909. After attending Howard University she returned to San Antonio to teach at the historic Fredrick Douglas High School and at Phillis Wheatley High School. She had a unique way of motivating her students who loved her classes as they were stimulating and colorful. In 1922 she married John W. Hemmings, an actor who had appeared in theater productions nationwide. Together they organized the "Negro Little Theater of San Antonio". In 1941 Myra collaborated with black film actor Spencer Williams to create the film classic "Go Down Death". She starred in this black film classic based on the story by James Weldon Johnson. The film was released nationwide in 1944 and remains a respected part of black film history. Other films she produced and starred in were Gir in Room #20, Moving On and Go Down Death. Mrs. Davis-Hemmings also produced and directed films that were shot in and around San Antonio, Texas. During this time, she continued to teach in San Antonio for 53 years. Mrs. Davis-Hemmings died on December 8, 1968.`,
-
-			`Hattie Elam Briscoe was born in Shreveport, Louisiana in 1916. Her family moved to Marshal, Texas. After graduating high school with honors, she received a scholarship to Wiley College where she received a Bachelor of Arts degree in 1937. She then went to Wichita Falls, Texas where she taught fourth grade from 1937 to 1941. In October 1941 she married William Briscoe and moved back to San Antonio, Texas where they opened "Briscoe's Beauty Salon". She became a licensed cosmetology instructor, taught night classes at Hicks Beauty School and later at Phyllis Wheatley High School. Mrs. Briscoe went on to obtain a master's degree from Prairie View A&M College in 1951. In 1956, Mrs. Briscoe graduated Magna Cum Laude from St Mary's Law School with a Juris doctorate at the age of 40. She continued in the practicing of law achieving numerous honors, awards, and accolades until her death in 2002.`,
-
-			`Artist Jacqui Dorsey created the 6-by-8-foot tile mural. Fifth graders from Douglass Elementary School helped Mrs. Dorsey with the floral embellishments on the lower portion of the mural.`,
-
-			`The Eastside Founding Mothers mural is located in the courtyard behind two restored duplexes in the Ellis Alley area located on Chestnut Street. These structures were restored by VIA Metropolitan Transit and serve as the information center for the Ellis Alley Park and Ride and are part of the only remaining original structure from this historic community.`
 		]
 	},
+	{
+		id: 'd79c7084-ece8-44ff-839e-49409749c221',
+		name: 'Unnamed Jewelry Head Two',
+		images: [
+			{
+				src: jewelryHead2,
+				alt: 'A dark haired woman of color wearing a brown hat and a yellow dress. The hat features a brown cloth accent. Painted onto a wood known as jewelry head.'
+			}
+		]
+	},
+
 	{
 		id: 'c6988a2e-4a68-4c64-afb6-1151cc7a5715',
 		name: 'The Way To Freedom',
@@ -236,24 +228,45 @@ export const artPieces: ArtPiece[] = [
 			}
 		]
 	},
+
 	{
-		id: '3708b297-a8e5-4d85-aa00-cd87d5ec0c95',
-		name: 'Unnamed Jewelry Head 1',
+		id: '7282c6ae-1a3b-43e5-a0ae-2b328f6d9855',
+		name: 'Musician',
 		images: [
 			{
-				src: jewelryHead1,
-				alt: 'A blonde woman wearing a white hat and white and pink dress. The hat features a pink and green cloth accent, fastened via a pink button. Painted onto a wood known as jewelry head.'
+				src: musician,
+				alt: 'A sculpture of a well-dressed violinist playing his instrument'
 			}
 		]
 	},
 	{
-		id: 'd79c7084-ece8-44ff-839e-49409749c221',
-		name: 'Unnamed Jewelry Head 2',
+		id: 'ad0c879a-399b-4358-b8f8-e21a749a6d0a',
+		name: 'The Founding Mothers of Ellis Alley',
+		location: '210 Chestnut St, San Antonio, TX 78202',
 		images: [
 			{
-				src: jewelryHead2,
-				alt: 'A dark haired woman of color wearing a brown hat and a yellow dress. The hat features a brown cloth accent. Painted onto a wood known as jewelry head.'
+				src: foundingMothersMuralAndArtist,
+				alt: 'A picture of Jacqui Dorsey (the artist) standing next to a mural she painted featuring 3 the Eastside founding mothers: Artemisia Bowden, Mattie Briscoe, and Myra Hemmings'
+			},
+			{
+				src: foundingMothersMuralPassage,
+				alt: `A picture of the passage shown on the lower left of The Founding Mother's Mural which reads: "Jacqui Dorsey and Douglass Elementary School"`
 			}
+		],
+		description: [
+			`This is the "Founding Mothers of Ellis Alley" mural located on the San Antonio East Side in an area known as Ellis Alley. When the civil war ended in 1865, new tax laws allowed ex-slaves to own property and pay taxes. Property was purchased in the east side area and divided among selected individuals who wanted to develop businesses in the area. When African Americans were first allowed to own property, land designated was the back streets and alleys on the eastside of San Antonio. The former slaves took these properties and developed them into a thriving self-sufficient community known as Ellis Alley. The city's "Black Eastside" emerged from the area surrounding this site, on what is now called Chestnut Street.`,
+
+			`A commemorative mural to Ellis Alley was commissioned by Sterling Houston and created by Artist Jacqui Dorsey celebrating the founding mothers of the east side. The East side Founding Mothers mural is located on Chestnut Street in the area formerly known as Ellis Alley. This mural identifies the "Eastside Founding Mothers" Artemisia Bowden, Mattie Briscoe, and Myra Hemmings.`,
+
+			`Artemisia Bowden was born in 1902 to former slaves. After graduating high school, she was recruited by Episcopal Bishop James Steptoe Johnston; serve as a teacher at the St Phillips School for Negro Girls. She taught the girls English, Mathematics, Etiquette and Sewing. Ms. Bowden taught for 52 years, she became Dean Emeritus of St. Phillip's College. Under her tutelage St. Phillips became an industrial and accredited two-year college.`,
+
+			`Myra Lillian Davis-Hemmings was born in 1895 in the outskirts of Gonzales, Texas. She moved to San Antonio, Texas in 1909. After attending Howard University she returned to San Antonio to teach at the historic Fredrick Douglas High School and at Phillis Wheatley High School. She had a unique way of motivating her students who loved her classes as they were stimulating and colorful. In 1922 she married John W. Hemmings, an actor who had appeared in theater productions nationwide. Together they organized the "Negro Little Theater of San Antonio". In 1941 Myra collaborated with black film actor Spencer Williams to create the film classic "Go Down Death". She starred in this black film classic based on the story by James Weldon Johnson. The film was released nationwide in 1944 and remains a respected part of black film history. Other films she produced and starred in were Gir in Room #20, Moving On and Go Down Death. Mrs. Davis-Hemmings also produced and directed films that were shot in and around San Antonio, Texas. During this time, she continued to teach in San Antonio for 53 years. Mrs. Davis-Hemmings died on December 8, 1968.`,
+
+			`Hattie Elam Briscoe was born in Shreveport, Louisiana in 1916. Her family moved to Marshal, Texas. After graduating high school with honors, she received a scholarship to Wiley College where she received a Bachelor of Arts degree in 1937. She then went to Wichita Falls, Texas where she taught fourth grade from 1937 to 1941. In October 1941 she married William Briscoe and moved back to San Antonio, Texas where they opened "Briscoe's Beauty Salon". She became a licensed cosmetology instructor, taught night classes at Hicks Beauty School and later at Phyllis Wheatley High School. Mrs. Briscoe went on to obtain a master's degree from Prairie View A&M College in 1951. In 1956, Mrs. Briscoe graduated Magna Cum Laude from St Mary's Law School with a Juris doctorate at the age of 40. She continued in the practicing of law achieving numerous honors, awards, and accolades until her death in 2002.`,
+
+			`Artist Jacqui Dorsey created the 6-by-8-foot tile mural. Fifth graders from Douglass Elementary School helped Mrs. Dorsey with the floral embellishments on the lower portion of the mural.`,
+
+			`The Eastside Founding Mothers mural is located in the courtyard behind two restored duplexes in the Ellis Alley area located on Chestnut Street. These structures were restored by VIA Metropolitan Transit and serve as the information center for the Ellis Alley Park and Ride and are part of the only remaining original structure from this historic community.`
 		]
 	},
 	{
@@ -263,29 +276,23 @@ export const artPieces: ArtPiece[] = [
 		images: [
 			{
 				src: dorieMillerMural,
+				width: 2,
 				alt: 'A mural featuring Dorie Miller and other influential black figures.'
 			},
 			{
 				src: dorieMillerMuralLeft,
+				width: 2,
 				alt: 'A close up of the left side of the Dorie Miller Mural.'
 			},
 			{
 				src: dorieMillerMuralRight,
+				width: 2,
 				alt: 'A close up of the right side of the Dorie Miller Mural.'
 			},
 			{
 				src: dorieMillerMuralPassage,
+				width: 2,
 				alt: 'A close up of the passage in the upper left of the Dorie Miller Mural which reads, "The names on the wall are the children of Dorie Miller, Martin Luther King and Booker T Washington schools. Our Future Heroes. 1996"'
-			}
-		]
-	},
-	{
-		id: '7282c6ae-1a3b-43e5-a0ae-2b328f6d9855',
-		name: 'Musician',
-		images: [
-			{
-				src: musician,
-				alt: 'A sculpture of a well-dressed violinist playing his instrument'
 			}
 		]
 	}
