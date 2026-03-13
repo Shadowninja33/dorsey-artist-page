@@ -10,6 +10,7 @@ const imageModules = import.meta.glob(
 		}
 	}
 ) as Record<ImageUrl, { default: Picture }>;
+// console.dir(imageModules);
 
 const imagePath = '/src/lib/images/art/' as const;
 type ImagePath = typeof imagePath;
@@ -19,8 +20,15 @@ const getImageUrl = (name: ImageName): ImageUrl => `${imagePath}${name}`;
 
 const getImage = (name: ImageName) => {
 	const url = getImageUrl(name);
-	return imageModules[url].default;
+	const module = imageModules[url];
+
+	// debugger;
+	if (!module?.default) console.log(module, name);
+	// console.log(module);
+	return unwrapDefault(module);
 };
+
+const unwrapDefault = <TReturn>(x: { default?: TReturn }) => x?.default;
 
 const ImageNames = [
 	'a-days-work.jpg',
@@ -39,7 +47,11 @@ const ImageNames = [
 	'sisters.jpg',
 	'sisters-2.jpg',
 	'generations.jpg',
-	'grandfather.jpg'
+	'grandfather.jpg',
+	'emily-morgan-2.jpeg',
+	'jewelry-head-1.jpeg',
+	'jewelry-head-2.jpeg',
+	'nursing-2.jpeg'
 ] as const;
 
 type ImageName = (typeof ImageNames)[number];
@@ -50,17 +62,21 @@ const dorieMillerMuralLeft = getImage('dorie-miller-mural-left.jpg');
 const dorieMillerMuralPassage = getImage('dorie-miller-mural-passage.jpg');
 const dorieMillerMuralRight = getImage('dorie-miller-mural-right.jpg');
 const emilyMorgan = getImage('emily-morgan.jpg');
+const emilyMorganTwo = getImage('emily-morgan-2.jpeg');
 const fatherAndChild = getImage('father-and-child.jpg');
 const foundingMothersMuralAndArtist = getImage('founding-mothers-mural-and-artist.jpg');
 const foundingMothersMuralPassage = getImage('founding-mothers-mural-passage.jpg');
 const musician = getImage('musician.jpg');
 const nursing = getImage('nursing.jpg');
+const nursingTwo = getImage('nursing-2.jpeg');
 const seamstress = getImage('seamstress.jpg');
 const woman = getImage('woman.jpg');
 const sisters = getImage('sisters.jpg');
 const sisters2 = getImage('sisters-2.jpg');
 const generations = getImage('generations.jpg');
 const grandfather = getImage('grandfather.jpg');
+const jewelryHead1 = getImage('jewelry-head-1.jpeg');
+const jewelryHead2 = getImage('jewelry-head-2.jpeg');
 
 type Tuple<T, N extends number, A extends unknown[]> = A extends { length: N }
 	? A
@@ -98,7 +114,11 @@ export const artPieces: ArtPiece[] = [
 		images: [
 			{
 				src: emilyMorgan,
-				alt: 'A Painting of Emily Morgan (a free woman of color) in a peach color dress holding a yellow rose'
+				alt: 'A Painting of Emily Morgan (a free woman of color) in a peach color dress holding a yellow rose. Taken in warm lighting.'
+			},
+			{
+				src: emilyMorganTwo,
+				alt: 'A Painting of Emily Morgan (a free woman of color) in a peach color dress holding a yellow rose. Taken in cool lighting from a slight right angle.'
 			}
 		]
 	},
@@ -108,7 +128,7 @@ export const artPieces: ArtPiece[] = [
 		images: [
 			{
 				src: fatherAndChild,
-				alt: 'A profile painting of a father holding his child on his shoulders and smiling'
+				alt: 'A profile painting of a father holding his child on his shoulders and smiling.'
 			}
 		]
 	},
@@ -118,7 +138,11 @@ export const artPieces: ArtPiece[] = [
 		images: [
 			{
 				src: nursing,
-				alt: 'A painting of a woman of color nursing her baby'
+				alt: 'A painting of a woman of color nursing her baby. Taken in warm lighting.'
+			},
+			{
+				src: nursingTwo,
+				alt: 'A painting of a woman of color nursing her baby. Taken in cool lighting.'
 			}
 		]
 	},
@@ -209,6 +233,26 @@ export const artPieces: ArtPiece[] = [
 			{
 				src: sisters2,
 				alt: 'A painting of two sisters wearing straw color hats. The second woman is looking over her shoulder towards the viewer, while the first faces away.'
+			}
+		]
+	},
+	{
+		id: '3708b297-a8e5-4d85-aa00-cd87d5ec0c95',
+		name: 'Unnamed Jewelry Head 1',
+		images: [
+			{
+				src: jewelryHead1,
+				alt: 'A blonde woman wearing a white hat and white and pink dress. The hat features a pink and green cloth accent, fastened via a pink button. Painted onto a wood known as jewelry head.'
+			}
+		]
+	},
+	{
+		id: 'd79c7084-ece8-44ff-839e-49409749c221',
+		name: 'Unnamed Jewelry Head 2',
+		images: [
+			{
+				src: jewelryHead2,
+				alt: 'A dark haired woman of color wearing a brown hat and a yellow dress. The hat features a brown cloth accent. Painted onto a wood known as jewelry head.'
 			}
 		]
 	},
