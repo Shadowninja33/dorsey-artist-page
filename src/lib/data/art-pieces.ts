@@ -23,12 +23,12 @@ const getImage = (name: ImageName) => {
 	const module = imageModules[url];
 
 	// debugger;
-	if (!module?.default) console.log(module, name);
+	// if (!module?.default) console.log(module, name);
 	// console.log(module);
 	return unwrapDefault(module);
 };
 
-const unwrapDefault = <TReturn>(x: { default?: TReturn }) => x?.default;
+const unwrapDefault = <TReturn>(x: { default: TReturn }) => x.default;
 
 const ImageNames = [
 	'a-days-work.jpg',
