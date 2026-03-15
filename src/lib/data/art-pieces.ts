@@ -1,4 +1,5 @@
 import type { Picture } from '../../types';
+import { camelCase } from 'string-ts';
 
 const imageModules = import.meta.glob(
 	'/src/lib/images/art/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}',
@@ -10,25 +11,21 @@ const imageModules = import.meta.glob(
 		}
 	}
 ) as Record<ImageUrl, { default: Picture }>;
-// console.dir(imageModules);
+
+const Images = Object.entries(imageModules).reduce(
+	(acc, [rawUrl, picture]) => {
+		const url = rawUrl as ImageUrl;
+		const imageName = url.split('/')[5];
+		const imageNameWithoutFileType = camelCase(imageName.split('.')[0]);
+		acc[imageNameWithoutFileType] = picture.default;
+		return acc;
+	},
+	{} as Record<(typeof ImageNamesWithoutFileType)[number], Picture>
+);
 
 const imagePath = '/src/lib/images/art/' as const;
 type ImagePath = typeof imagePath;
 type ImageUrl = `${ImagePath}${ImageName}`;
-
-const getImageUrl = (name: ImageName): ImageUrl => `${imagePath}${name}`;
-
-const getImage = (name: ImageName) => {
-	const url = getImageUrl(name);
-	const module = imageModules[url];
-
-	// debugger;
-	// if (!module?.default) console.log(module, name);
-	// console.log(module);
-	return unwrapDefault(module);
-};
-
-const unwrapDefault = <TReturn>(x: { default: TReturn }) => x.default;
 
 const ImageNames = [
 	'a-days-work.jpg',
@@ -53,31 +50,9 @@ const ImageNames = [
 	'jewelry-head-2.jpeg',
 	'nursing-2.jpeg'
 ] as const;
-
 type ImageName = (typeof ImageNames)[number];
 
-const aDaysWork = getImage('a-days-work.jpg');
-const dorieMillerMural = getImage('dorie-miller-mural.jpg');
-const dorieMillerMuralLeft = getImage('dorie-miller-mural-left.jpg');
-const dorieMillerMuralPassage = getImage('dorie-miller-mural-passage.jpg');
-const dorieMillerMuralRight = getImage('dorie-miller-mural-right.jpg');
-const emilyMorgan = getImage('emily-morgan.jpg');
-const emilyMorganTwo = getImage('emily-morgan-2.jpeg');
-const fatherAndChild = getImage('father-and-child.jpg');
-const foundingMothersMuralAndArtist = getImage('founding-mothers-mural-and-artist.jpg');
-const foundingMothersMuralPassage = getImage('founding-mothers-mural-passage.jpg');
-const musician = getImage('musician.jpg');
-const nursing = getImage('nursing.jpg');
-const nursingTwo = getImage('nursing-2.jpeg');
-const seamstress = getImage('seamstress.jpg');
-const woman = getImage('woman.jpg');
-const sisters = getImage('sisters.jpg');
-const sisters2 = getImage('sisters-2.jpg');
-const generations = getImage('generations.jpg');
-const grandfather = getImage('grandfather.jpg');
-const jewelryHead1 = getImage('jewelry-head-1.jpeg');
-const jewelryHead2 = getImage('jewelry-head-2.jpeg');
-
+const ImageNamesWithoutFileType = ImageNames.map((imageName) => camelCase(imageName.split('.')[0]));
 type Tuple<T, N extends number, A extends unknown[]> = A extends { length: N }
 	? A
 	: Tuple<T, N, [...A, T]>;
@@ -97,6 +72,31 @@ export interface Image {
 	alt: string;
 }
 
+const {
+	aDaysWork,
+	dorieMillerMural,
+	dorieMillerMuralLeft,
+	dorieMillerMuralPassage,
+	dorieMillerMuralRight,
+	emilyMorgan,
+	emilyMorgan2,
+	fatherAndChild,
+	nursing,
+	nursing2,
+	woman,
+	foundingMothersMuralAndArtist,
+	foundingMothersMuralPassage,
+	musician,
+	seamstress,
+	sisters,
+	sisters2,
+	generations,
+	grandfather,
+	jewelryHead1,
+	jewelryHead2
+} = Images;
+
+console.log(Images);
 export const artPieces: ArtPiece[] = [
 	{
 		id: '1af5b845-0dcc-42a8-a9bf-2de147e629a4',
@@ -117,7 +117,7 @@ export const artPieces: ArtPiece[] = [
 				alt: 'A Painting of Emily Morgan (a free woman of color) in a peach color dress holding a yellow rose. Taken in warm lighting.'
 			},
 			{
-				src: emilyMorganTwo,
+				src: emilyMorgan2,
 				alt: 'A Painting of Emily Morgan (a free woman of color) in a peach color dress holding a yellow rose. Taken in cool lighting from a slight right angle.'
 			}
 		]
@@ -141,7 +141,7 @@ export const artPieces: ArtPiece[] = [
 				alt: 'A painting of a woman of color nursing her baby. Taken in warm lighting.'
 			},
 			{
-				src: nursingTwo,
+				src: nursing2,
 				alt: 'A painting of a woman of color nursing her baby. Taken in cool lighting.'
 			}
 		]

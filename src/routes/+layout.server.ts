@@ -1,5 +1,6 @@
 import { artPieces } from '$lib/data/art-pieces';
 import type { SeoData } from '../types';
+import 'string-ts/native';
 
 export function load() {
 	const seoData: SeoData = {
