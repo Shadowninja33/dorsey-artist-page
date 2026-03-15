@@ -68,6 +68,9 @@ importers:
       prettier-plugin-svelte:
         specifier: ^3.5.0
         version: 3.5.0(prettier@3.8.1)(svelte@4.2.20)
+      string-ts:
+        specifier: ^2.3.1
+        version: 2.3.1
       svelte:
         specifier: ^4.2.20
         version: 4.2.20
@@ -1896,6 +1899,9 @@ packages:
   source-map@0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
+
+  string-ts@2.3.1:
+    resolution: {integrity: sha512-xSJq+BS52SaFFAVxuStmx6n5aYZU571uYUnUrPXkPFCfdHyZMMlbP2v2Wx5sNBnAVzq/2+0+mcBLBa3Xa5ubYw==}
 
   strip-ansi@6.0.1:
     resolution: {integrity: sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==}
@@ -3763,6 +3769,8 @@ snapshots:
 
   source-map@0.6.1:
     optional: true
+
+  string-ts@2.3.1: {}
 
   strip-ansi@6.0.1:
     dependencies:
