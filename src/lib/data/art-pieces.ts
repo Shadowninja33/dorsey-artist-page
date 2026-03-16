@@ -1,4 +1,4 @@
-import type { Picture } from '../../types';
+import type { AtLeastOne, Picture } from '../../types';
 import { camelCase } from 'string-ts';
 
 const imageModules = import.meta.glob(
@@ -53,11 +53,6 @@ const ImageNames = [
 type ImageName = (typeof ImageNames)[number];
 
 const ImageNamesWithoutFileType = ImageNames.map((imageName) => camelCase(imageName.split('.')[0]));
-type Tuple<T, N extends number, A extends unknown[]> = A extends { length: N }
-	? A
-	: Tuple<T, N, [...A, T]>;
-type AtLeast<T, N extends number> = [...Tuple<T, N, []>, ...T[]];
-type AtLeastOne<T> = AtLeast<T, 1>;
 
 export interface ArtPiece {
 	id: string;

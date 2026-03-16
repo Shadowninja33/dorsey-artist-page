@@ -14,3 +14,9 @@ export interface Picture {
 		h: number;
 	};
 }
+
+export type Tuple<T, N extends number, A extends unknown[]> = A extends { length: N }
+	? A
+	: Tuple<T, N, [...A, T]>;
+export type AtLeast<T, N extends number> = [...Tuple<T, N, []>, ...T[]];
+export type AtLeastOne<T> = AtLeast<T, 1>;
