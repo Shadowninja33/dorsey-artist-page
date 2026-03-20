@@ -26,7 +26,12 @@
 <AppBar class="sticky top-0 z-20 h-(--header-height)">
 	<AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
 		<AppBar.Lead>
-			<button type="button" aria-label="Open Sidebar" class="btn" onclick={() => toggleSidebar()}>
+			<button
+				type="button"
+				aria-label="Open Sidebar"
+				class="btn md:hidden"
+				onclick={() => toggleSidebar()}
+			>
 				<MenuIcon class="size-4" />
 			</button>
 		</AppBar.Lead>
